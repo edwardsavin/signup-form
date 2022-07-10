@@ -1,5 +1,5 @@
 :root {
-  --clr-primary-400: hsl(256, 86%, 62%);
+  --clr-primary-400: rgb(119, 75, 241);
 
   --clr-neutral-100: hsl(0, 12%, 97%);
   --clr-neutral-400: hsl(0, 0%, 95%);
@@ -138,4 +138,16 @@ svg {
 }
 .fs-500 {
   font-size: var(--fs-500);
+}
+
+.ff-body {
+  font-family: var(--ff-body);
+}
+
+.ff-heading {
+  font-family: var(--ff-heading);
+}
+
+.container {
+  display: flex;
 }
