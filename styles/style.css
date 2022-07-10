@@ -1,10 +1,10 @@
 :root {
-  --clr-primary-400: rgb(119, 75, 241);
+  --clr-primary-400: #212529;
 
-  --clr-neutral-100: hsl(0, 12%, 97%);
-  --clr-neutral-400: hsl(0, 0%, 95%);
+  --clr-neutral-100: #f8f9fa;
+  --clr-neutral-400: #e9ecef;
 
-  --clr-accent-400: hsl(256, 94%, 72%);
+  --clr-accent-400: #343a40;
   --clr-accent-700: hsl(0, 90%, 55%);
 
   --ff-primary: "Space Grotesk", sans-serif;
@@ -16,8 +16,9 @@
   --fw-regular: 400;
   --fw-bold: 700;
 
-  --fs-300: 0.85rem;
-  --fs-400: 1.1rem;
+  --fs-300: 0.65rem;
+  --fs-350: 0.825rem;
+  --fs-400: 1rem;
   --fs-500: 1.65rem;
 }
 
@@ -133,6 +134,11 @@ svg {
 .fs-300 {
   font-size: var(--fs-300);
 }
+
+.fs-350 {
+  font-size: var(--fs-350);
+}
+
 .fs-400 {
   font-size: var(--fs-400);
 }
@@ -148,6 +154,66 @@ svg {
   font-family: var(--ff-heading);
 }
 
+label {
+  font-family: var(--ff-body);
+  color: var(--clr-accent-400);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-350);
+  letter-spacing: 0.1rem;
+}
+
+input {
+  font-family: var(--ff-body);
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-400);
+}
+
+a {
+  color: inherit;
+}
+
 .container {
   display: flex;
+}
+
+.image-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#image-credits {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#bg-image {
+  max-height: 100vh;
+  max-width: 100vh;
+}
+
+#signup-form,
+#form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30vh;
+}
+
+.control-group-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bbb {
+  display: flex;
+  flex-direction: column;
 }
