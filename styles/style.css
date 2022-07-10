@@ -1,10 +1,10 @@
 :root {
-  --clr-primary-400: #212529;
+  --clr-primary-400: hsl(210, 11%, 15%);
 
-  --clr-neutral-100: #f8f9fa;
-  --clr-neutral-400: #e9ecef;
+  --clr-neutral-100: hsl(210, 17%, 98%);
+  --clr-neutral-400: hsl(210, 16%, 93%);
 
-  --clr-accent-400: #343a40;
+  --clr-accent-400: hsl(210, 10%, 23%);
   --clr-accent-700: hsl(0, 90%, 55%);
 
   --ff-primary: "Space Grotesk", sans-serif;
@@ -154,6 +154,11 @@ svg {
   font-family: var(--ff-heading);
 }
 
+::selection {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+}
+
 label {
   font-family: var(--ff-body);
   color: var(--clr-accent-400);
@@ -167,25 +172,115 @@ input {
   color: var(--clr-primary-400);
   font-weight: var(--fw-regular);
   font-size: var(--fs-400);
+  border: #e5e7eb 1px solid;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.error-message {
+  display: none;
+}
+
+input:focus {
+  outline: var(--clr-accent-400) 1px solid;
+  box-shadow: 4px 5px 16px -2px rgba(33, 37, 41, 0.31);
+}
+
+input:not(:focus):not(:placeholder-shown):valid {
+  background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg")
+    no-repeat 95% 50%;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
+  display: block;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+  background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg")
+    no-repeat 95% 50%;
+  outline: var(--clr-accent-700) 1px solid;
 }
 
 a {
   color: inherit;
 }
 
-.container {
-  display: flex;
+button {
+  position: relative;
+  font-size: 1.2em;
+  padding: 0.7em 1.4em;
+  background-color: var(--clr-accent-400);
+  text-decoration: none;
+  border: none;
+  border-radius: 0.05em;
+  color: var(--clr-neutral-400);
+  box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
-.image-wrapper {
-  position: relative;
-  text-align: center;
+button::before {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    135deg,
+    var(--clr-neutral-400) 0%,
+    var(--clr-neutral-400) 50%,
+    var(--clr-accent-400) 50%,
+    var(--clr-accent-400) 60%
+  );
+  border-radius: 0 0 0.05em 0;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+button:hover::before {
+  width: 2em;
+  height: 2em;
+}
+
+button:active {
+  box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+  transform: translate(0.05em, 0.05em);
+}
+
+.container {
+  display: flex;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.content > #intro-text,
+.content > #user-action,
+#form-section > #signup-form,
+#form-section > h2 {
+  margin-left: 4%;
+  margin-right: 20%;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.control-group-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  align-self: center;
 }
 
 #image-credits {
@@ -198,6 +293,7 @@ a {
 #bg-image {
   max-height: 100vh;
   max-width: 100vh;
+  width: 40vmax;
 }
 
 #signup-form,
@@ -205,15 +301,26 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 30vh;
 }
 
-.control-group-container {
-  display: flex;
-  justify-content: space-evenly;
+#form-section {
+  border-radius: 3px;
+  box-shadow: 0px 8px 18px -5px rgba(33, 37, 41, 0.34);
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.bbb {
+#signup-form {
+  height: 26vh;
+  max-width: 42%;
+}
+
+#user-action {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100px;
+  max-width: fit-content;
+  margin-top: -30px;
 }
