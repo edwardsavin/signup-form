@@ -197,7 +197,7 @@ input:focus {
 
 input:not(:focus):not(:placeholder-shown):valid,
 .matching {
-  background: url("../images/hand-thumbs-up.svg") no-repeat 95% 50%;
+  background: url("./images/hand-thumbs-up.svg") no-repeat 95% 50%;
   background-color: var(--clr-neutral-100);
 }
 
@@ -208,7 +208,7 @@ input:not(:focus):not(:placeholder-shown):invalid ~ .error-phone {
 
 input:not(:focus):not(:placeholder-shown):invalid,
 .not-matching {
-  background: url("../images/exclamation-triangle-fill.svg") no-repeat 95% 50% !important;
+  background: url("./images/exclamation-triangle-fill.svg") no-repeat 95% 50% !important;
   outline: var(--clr-accent-700) 1px solid;
   background-color: var(--clr-neutral-100);
 }
