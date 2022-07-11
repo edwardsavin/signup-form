@@ -177,8 +177,15 @@ input {
   padding: 2px;
 }
 
-.error-message {
+.error-phone,
+.error-password {
   display: none;
+  margin-top: 1px;
+}
+
+input,
+textarea {
+  background-color: var(--clr-neutral-100);
 }
 
 input:focus {
@@ -186,19 +193,24 @@ input:focus {
   box-shadow: 4px 5px 16px -2px rgba(33, 37, 41, 0.31);
 }
 
-input:not(:focus):not(:placeholder-shown):valid {
+input:not(:focus):not(:placeholder-shown):valid,
+.matching {
   background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg")
     no-repeat 95% 50%;
+  background-color: var(--clr-neutral-100);
 }
 
-input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
+input:not(:focus):not(:placeholder-shown):invalid ~ .error-phone {
   display: block;
+  background-color: var(--clr-neutral-100);
 }
 
-input:not(:focus):not(:placeholder-shown):invalid {
+input:not(:focus):not(:placeholder-shown):invalid,
+.not-matching {
   background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg")
-    no-repeat 95% 50%;
+    no-repeat 95% 50% !important;
   outline: var(--clr-accent-700) 1px solid;
+  background-color: var(--clr-neutral-100);
 }
 
 a {

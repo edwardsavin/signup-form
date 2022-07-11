@@ -95,7 +95,7 @@
                     required
                   />
                   <p
-                    class="error-message | ff-body fs-300 fw-ligt text-accent-700"
+                    class="error-phone | ff-body fs-300 fw-regular text-accent-700"
                   >
                     *Please enter a valid phone number
                   </p>
@@ -111,7 +111,13 @@
                     id="password"
                     placeholder=" "
                     required
+                    onkeyup="checkPasswordMatch()"
                   />
+                  <p
+                    class="error-password | ff-body fs-300 fw-regular text-accent-700"
+                  >
+                    *Passwords must match
+                  </p>
                 </div>
                 <div class="control-group">
                   <label for="confirm_password">CONFIRM PASSWORD</label>
@@ -121,6 +127,7 @@
                     id="confirm_password"
                     placeholder=" "
                     required
+                    onfocusout="checkPasswordMatch()"
                   />
                 </div>
               </div>
@@ -133,6 +140,7 @@
               form="signup-form"
               value="Submit"
               class="bg-accent-400 text-neutral-100 ff-body fw-bold"
+              id="submit"
             >
               Create Account
             </button>
