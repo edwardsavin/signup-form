@@ -4,7 +4,7 @@
 This project was made for The Odin Project Intermediate HTML and CSS Course Sign-up Form  Assignment.
 
 ## Live demo
-### [Signup Form ✍🏻](https://edwardsavin.github.io/calculator/)
+### [Signup Form ✍🏻](https://edwardsavin.github.io/signup-form/)
 
 ## Built with
 
